@@ -1,6 +1,6 @@
 -- 부서와 사원 테이블 생성
 CREATE TABLE department(
-    deptid    NUMBER PRIMARY KEY, -- 기본키
+    deptid   NUMBER PRIMARY KEY, -- 기본키
     deptname VARCHAR2(20) NOT NULL, --NULL 불허
     location VARCHAR2(20) NOT NULL
 );
@@ -19,6 +19,7 @@ SELECT deptid, deptname FROM department;
 -- 모든 칼럼 검색('*' 사용)
 SELECT * FROM department;
 
+
 -- 특정한 데이터(행:로우) 검색 -> WHERE 조건절 사용
 -- 부서이름이 전산팀인 row(레코드) 검색
 SELECT * FROM department 
@@ -31,8 +32,9 @@ WHERE deptid = 20;
 ROLLBACK; -- COMMIT 이전으로 돌아감
 
 -- 자료 삭제(마케팅팀 삭제)
+-- 삭제 이상 (자식이 참조하고 있으므로 삭제 안됨)
 DELETE FROM department
-WHERE deptid = 30;
+WHERE deptid = 10;
 
 COMMIT;
 
