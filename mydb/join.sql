@@ -45,6 +45,8 @@ WHERE cus.custid = ord.custid --기본키 = 외래키
 -- 내부 조인(INNER JOIN)
 -- 고객(customer)과 고객의 주문(order)에 관한 데이터중 고객의 이름과
 -- 고객이 주문한 도서의 판매가격을 검색하시오
+
+-- cus.custid , ord.custid 여집합
 SELECT cus.name, ord.saleprice
 FROM customer cus INNER JOIN orders ord
  ON cus.custid = ord.custid
@@ -56,11 +58,9 @@ ORDER BY cus.name;
 -- 주문되지 않은 데이터를 포함하여 고객의 이름과 고객이 주문한 
 -- 도서의 판매가격을 검색하시오
 
+-- cus.custid , ord.custid 합집합
 SELECT cus.name, ord.saleprice
 FROM customer cus LEFT OUTER JOIN orders ord
     ON cus.custid = ord.custid
 ORDER BY cus.name;
-
-
-
 
