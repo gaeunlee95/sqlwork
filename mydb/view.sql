@@ -1,5 +1,5 @@
 -- 뷰(VIEW) 생성
--- UPDATE, DELETE 
+-- UPDATE, DELETE 기능을...
 -- 주소에 '대한민국'을 포함하는 고객들로 구성된 뷰를 만드시오
 CREATE VIEW vw_customer
 AS SELECT * FROM customer
@@ -16,6 +16,19 @@ UPDATE vw_customer
 -- 참조하고 있는 order 테이블이 있어서 삭제 불가
 DELETE FROM vw_customer
     WHERE custid = 3;
+
+-- 고객과 고객의 주문에 관한 정보를 검색
+-- 뷰 만들기
+CREATE VIEW vw_book_order AS 
+SELECT cs.name, bk.bookname, od.saleprice
+FROM book bk, customer cs, orders od
+WHERE bk.bookid = od.bookid
+    AND cs.custid = od.custid;
+    
+SELECT * FROM vw_book_order;
+
+SELECT COUNT(*) 전체건수 
+FROM vw_book_order;
 
 COMMIT;
 
