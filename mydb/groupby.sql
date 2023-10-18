@@ -5,36 +5,19 @@ CREATE TABLE department (
     office   VARCHAR2(20)
 );
 
-INSERT INTO department VALUES (
-    '1000',
-    '인사팀',
-    '서울'
+INSERT INTO department VALUES ('1000','인사팀','서울'
 );
 
-INSERT INTO department VALUES (
-    '1001',
-    '전산팀',
-    '인천'
+INSERT INTO department VALUES ('1001','전산팀','인천'
 );
 
-INSERT INTO department VALUES (
-    '1002',
-    '전산팀',
-    '수원'
+INSERT INTO department VALUES ('1002','전산팀','수원'
 );
 
-INSERT INTO department (
-    deptno,
-    deptname
-) VALUES (
-    '1003',
-    '영업팀'
-);
+INSERT INTO department (deptno,deptname) 
+VALUES ('1003','영업팀');
 
-SELECT
-    *
-FROM
-    department;
+SELECT * FROM department;
 
 -- employee 테이블 생성
 CREATE TABLE employee (

@@ -1,3 +1,4 @@
+
 -- 수강료 테이블
 CREATE TABLE summer_price(
     subject VARCHAR2(20) PRIMARY KEY,
