@@ -16,4 +16,7 @@ VALUES (seq.NEXTVAL, '공지 사항', '천장 에어컨 청소합니다.', 'admin0000');
 SELECT * FROM board 
 ORDER BY bno DESC;
 
+DROP SEQUENCE seq;
+TRUNCATE TABLE board;
+
 COMMIT;
