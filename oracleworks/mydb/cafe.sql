@@ -44,9 +44,8 @@ SELECT b.order_no,
        a.drink_name,
        b.order_cnt
 FROM drink a JOIN cafe_order b
- USING (drink_code);
+  USING (drink_code);
  
-
 COMMIT;
 
 DROP TABLE drink;

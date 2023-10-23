@@ -2,7 +2,7 @@
 -- CLOB(Character Large OBject) - 매우 큰 문자열 자료형(4GB)
 CREATE TABLE product_review(
     review_no     NUMBER PRIMARY KEY,    -- 리뷰번호
-    product_code  CHAR(6) NOT NULL, -- 상품코드
+    product_code  CHAR(6) NOT NULL,      -- 상품코드
     member_id     VARCHAR2(20) NOT NULL, -- 회원아이디
     content       CLOB NOT NULL,         -- 리뷰내용
     regdate       DATE DEFAULT SYSDATE,  -- 작성일
@@ -43,7 +43,7 @@ WHERE a.product_code = b.product_code;
 SELECT * 
 FROM product a JOIN product_review b
     ON a.product_code = b.product_code;
-    
+   
 -- 리뷰의 유무에 관계없이 상품의 정보를 검색하시오
 -- 동등조인 방식(product 테이블의 상품은 모두 출력되고, 
 -- 리뷰는 있는 없든 관계 없음, 리뷰가 없으면 NULL로 출력됨)

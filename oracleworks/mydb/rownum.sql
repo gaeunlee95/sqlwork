@@ -37,7 +37,7 @@ WHERE ROWNUM >= 1 AND ROWNUM <= 5;
 SELECT * FROM ex_score
 ORDER BY score DESC;
 
--- 점수가 높은 순으로 5명을 검색하시오
+-- 점수가 높은 순으로 5명을 검색하시오 / 제대로 실행X
 SELECT ROWNUM, a.* FROM ex_score a
 WHERE ROWNUM <= 5
 ORDER BY score DESC;
